@@ -1,28 +1,32 @@
 <script>
   import logo from "./assets/svelte.png";
   import Counter from "./lib/Counter.svelte";
-
-  function toggle_darkmode() {
-    window.document.body.classList.toggle("dark");
-  }
+  import { darkmode } from "./lib/stores/darkmode";
 </script>
 
-<img src={logo} alt="Svelte Logo" />
-<h1>Hello world!</h1>
+<main class:dark={$darkmode}>
+  <div
+    id="root"
+    class="bg-nuetral-300 text-zinc-800 dark:bg-zinc-800 dark:text-slate-200"
+  >
+    <img src={logo} alt="Svelte Logo" />
+    <h1>Hello world!</h1>
 
-<button on:click={toggle_darkmode}>Toggle Dark Mode</button>
+    <button on:click={() => darkmode.toggle()}>Toggle Dark Mode</button>
 
-<Counter />
+    <Counter />
 
-<p>
-  Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte
-  apps.
-</p>
+    <p>
+      Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte
+      apps.
+    </p>
 
-<p>
-  Check out <a href="https://github.com/sveltejs/kit#readme">SvelteKit</a> for the
-  officially supported framework, also powered by Vite!
-</p>
+    <p>
+      Check out <a href="https://github.com/sveltejs/kit#readme">SvelteKit</a> for
+      the officially supported framework, also powered by Vite!
+    </p>
+  </div>
+</main>
 
 <style>
   button {

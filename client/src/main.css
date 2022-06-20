@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 body,
-div#app {
+main,
+div#app,
+div#root {
     min-height: 100vh;
     transition-property: background;
-    transition-duration: 300ms;
+    transition-duration: 200ms;
 }
