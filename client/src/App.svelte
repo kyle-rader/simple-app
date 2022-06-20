@@ -2,6 +2,7 @@
   import logo from "./assets/svelte.png";
   import Counter from "./lib/Counter.svelte";
   import { darkmode } from "./lib/stores/darkmode";
+  import DarkmodeToggle from "./lib/DarkmodeToggle.svelte";
 </script>
 
 <main class:dark={$darkmode}>
@@ -12,8 +13,7 @@
     <img src={logo} alt="Svelte Logo" />
     <h1>Hello world!</h1>
 
-    <button on:click={() => darkmode.toggle()}>Toggle Dark Mode</button>
-
+    <DarkmodeToggle />
     <Counter />
 
     <p>
