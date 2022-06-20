@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+div#app {
+    min-height: 100vh;
+    transition-property: background;
+    transition-duration: 300ms;
+}
