@@ -1,5 +1,5 @@
 <script>
-    import { darkmode } from "./stores/darkmode";
+    import { darkmode } from "./store/darkmode";
 </script>
 
 <button on:click={() => darkmode.toggle()}>

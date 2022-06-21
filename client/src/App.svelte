@@ -1,15 +1,12 @@
 <script>
   import logo from "./assets/svelte.png";
   import Counter from "./lib/Counter.svelte";
-  import { darkmode } from "./lib/stores/darkmode";
+  import { darkmode } from "./lib/store/darkmode";
   import DarkmodeToggle from "./lib/DarkmodeToggle.svelte";
 </script>
 
 <main class:dark={$darkmode}>
-  <div
-    id="root"
-    class="bg-nuetral-300 text-zinc-800 dark:bg-zinc-800 dark:text-slate-200"
-  >
+  <div id="root" class="bg-light0 text-dark0 dark:bg-dark0 dark:text-light0">
     <img src={logo} alt="Svelte Logo" />
     <h1>Hello world!</h1>
 
@@ -17,22 +14,21 @@
     <Counter />
 
     <p>
-      Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte
-      apps.
+      Welcome to
+      <a href="https://github.com/kyle-rader/simple-app">
+        <pre>simple-app</pre>
+      </a>!
     </p>
-
     <p>
-      Check out <a href="https://github.com/sveltejs/kit#readme">SvelteKit</a> for
-      the officially supported framework, also powered by Vite!
+      This template has extended the Tailwind CSS colors with the GruvBox
+      colors.
+      <img
+        src="https://camo.githubusercontent.com/cdb2f2e986c564b515c0c698e6c45b4ab5d725a9/687474703a2f2f692e696d6775722e636f6d2f776136363678672e706e67"
+        alt="A grid of tiles showing the gruvbox color pallate and their hex rgb values."
+      />
     </p>
   </div>
 </main>
 
 <style>
-  button {
-    display: block;
-    border: 2px;
-    border-color: aliceblue;
-    border-radius: 0.5em;
-  }
 </style>
