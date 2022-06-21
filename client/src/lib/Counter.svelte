@@ -5,7 +5,10 @@
   };
 </script>
 
-<button on:click={increment}>
+<button
+  on:click={increment}
+  class="border rounded-md px-2 py-1 hover:bg-blue-faded"
+>
   Clicks: {count}
 </button>
 
