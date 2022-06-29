@@ -2,7 +2,7 @@
   import logo from "./assets/svelte.png";
   import Counter from "./lib/Counter.svelte";
   import { darkmode } from "./lib/store/darkmode";
-  import DarkmodeToggle from "./lib/DarkmodeToggle.svelte";
+  import DarkmodeToggle from "./lib/comp/DarkmodeToggle.svelte";
 
   import ColorGrid from "./lib/comp/ColorGrid.svelte";
 </script>

@@ -1,8 +1,8 @@
 <script>
     import keys from "lodash-es/_baseKeys";
-    import { onMount } from "svelte";
+    import ColorRow from "./ColorGrid/ColorRow.svelte";
 
-    const colors = {
+    const colorMap = {
         "dark0-hard": "#1d2021",
         dark0: "#282828",
         "dark0-soft": "#32302f",
@@ -41,17 +41,22 @@
         "aqua-faded": "#427b58",
         "orange-faded": "#af3a03",
     };
-    let ids = keys(colors);
+    let all = keys(colorMap);
+    let base = ["red", "green", "yellow", "blue", "purple", "aqua", "orange"];
+    let grays = ["gray-245", "gray-244"];
+    let lights = all.filter((x) => x.startsWith("light"));
+    let darks = all.filter((x) => x.startsWith("dark"));
+    let brights = all.filter((x) => x.endsWith("bright"));
+    let faded = all.filter((x) => x.endsWith("faded"));
 </script>
 
-<div class="grid grid-cols-5">
-    {#each ids as id}
-        <div>
-            {id}: <code>{colors[id]}</code>
-        </div>
-    {:else}
-        <div>Loading colors</div>
-    {/each}
+<div class="grid grid-cols-7">
+    <ColorRow ids={brights} {colorMap} fg="dark0" />
+    <ColorRow ids={base} {colorMap} fg="dark0" />
+    <ColorRow ids={faded} {colorMap} fg="dark0" />
+    <ColorRow ids={lights} {colorMap} fg="dark0" />
+    <ColorRow ids={darks} {colorMap} fg="light0" />
+    <ColorRow ids={grays} {colorMap} fg="light0" />
 </div>
 
 <style>
