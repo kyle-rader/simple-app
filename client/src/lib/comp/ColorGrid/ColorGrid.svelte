@@ -1,6 +1,6 @@
 <script>
     import keys from "lodash-es/_baseKeys";
-    import ColorRow from "./ColorGrid/ColorRow.svelte";
+    import ColorRow from "./ColorRow.svelte";
 
     const colorMap = {
         "dark0-hard": "#1d2021",
