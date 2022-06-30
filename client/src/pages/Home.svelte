@@ -5,10 +5,10 @@
     import ColorGrid from "../lib/comp/ColorGrid/ColorGrid.svelte";
 </script>
 
-<div class="container lg:px-48 md:px-24 sm:px-12 px-4">
+<div class="container text-center mx-auto lg:px-48 md:px-24 sm:px-12 px-4">
     <img src={logo} alt="Svelte Logo" class="mx-auto w-1/3" />
 
-    <p class="text-center">
+    <p>
         <span class="inline text-2xl">
             Welcome to
             <a
@@ -21,7 +21,7 @@
         </span>
     </p>
 
-    <p class="py-4 text-center">
+    <p class="py-4">
         <DarkmodeToggle />
         <Counter />
     </p>
