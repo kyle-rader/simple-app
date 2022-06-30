@@ -29,10 +29,8 @@
           </a>!
         </span>
       </p>
-      <p>
-        This template uses the GruvBox color scheme.
-        <ColorGrid />
-      </p>
+      <p class="my-2">This template uses the GruvBox color scheme.</p>
+      <ColorGrid />
     </div>
   </div>
 </main>

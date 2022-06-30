@@ -50,7 +50,7 @@
     let faded = all.filter((x) => x.endsWith("faded"));
 </script>
 
-<div class="grid grid-cols-7">
+<div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7">
     <ColorRow ids={brights} {colorMap} fg="dark0" />
     <ColorRow ids={base} {colorMap} fg="dark0" />
     <ColorRow ids={faded} {colorMap} fg="dark0" />
