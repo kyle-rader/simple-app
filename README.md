@@ -4,6 +4,10 @@
 
 The goal of this repo is to build a modern web application template that uses [Rust] on the server and [Svelte] in the browser. The priorities are performance, simplicity, usability, and developer experience.
 
+## Demo App (front end only)
+
+https://kyle-rader.github.io/simple-app/
+
 ## The Stack
 Every modern web app has a stack because we have things to do and places to be, so you can't be building everything from scratch. This means we make choices about where to innovate and where to used existing software.
 
