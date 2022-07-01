@@ -1,1 +1,16 @@
-<div>Footer</div>
+<div class="flex p-4 text-center  font-mono">
+    <div class="grow hover:underline">
+        <a target="_blank" href="https://github.com/kyle-rader/simple-app"
+            >kyle-rader/simple-app</a
+        >
+    </div>
+    <div class="grow invisible md:visible">Simple App</div>
+    <div class="grow hover:underline">
+        <a
+            target="+blank"
+            href="https://github.com/kyle-rader/simple-app/blob/main/LICENSE"
+        >
+            MIT License
+        </a>
+    </div>
+</div>

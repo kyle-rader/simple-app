@@ -8,9 +8,14 @@
 </script>
 
 <main class:dark={$darkmode}>
-    <div id="root" class="bg-light0 text-dark0 dark:bg-dark0 dark:text-light0">
+    <div
+        id="root"
+        class="flex flex-col bg-light0 text-dark0 dark:bg-dark0 dark:text-light0"
+    >
         <Header {currentRoute} />
-        <Route {currentRoute} />
+        <div class="flex-grow">
+            <Route {currentRoute} />
+        </div>
         <Footer />
     </div>
 </main>
