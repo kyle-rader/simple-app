@@ -11,6 +11,6 @@
     <div id="root" class="bg-light0 text-dark0 dark:bg-dark0 dark:text-light0">
         <Header {currentRoute} />
         <Route {currentRoute} />
-        <Footer {currentRoute} />
+        <Footer />
     </div>
 </main>
