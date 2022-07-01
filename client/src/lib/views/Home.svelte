@@ -1,8 +1,8 @@
 <script>
-    import logo from "../assets/svelte.png";
-    import Counter from "../lib/comp/Counter.svelte";
-    import DarkmodeToggle from "../lib/comp/DarkmodeToggle.svelte";
-    import ColorGrid from "../lib/comp/ColorGrid/ColorGrid.svelte";
+    import DarkmodeToggle from "../comp/DarkmodeToggle.svelte";
+    import Counter from "../comp/Counter.svelte";
+    import logo from "../../assets/svelte.png";
+    import ColorGrid from "../comp/ColorGrid/ColorGrid.svelte";
 </script>
 
 <div class="container text-center mx-auto lg:px-48 md:px-24 sm:px-12 px-4">
