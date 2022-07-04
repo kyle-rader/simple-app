@@ -22,7 +22,6 @@
     </p>
 
     <p class="py-4">
-        <DarkmodeToggle />
         <Counter />
     </p>
     <p class="my-2">This template uses the GruvBox color scheme.</p>
