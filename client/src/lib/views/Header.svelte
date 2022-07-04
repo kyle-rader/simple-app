@@ -16,7 +16,17 @@
 </script>
 
 <nav class="flex">
-    {#each links as link}
-        <NavItem {...link} active={currentRoute.path == link.path} />
-    {/each}
+    <div class="w-1/2 flex flex-row">
+        {#each links as link}
+            <NavItem {...link} active={currentRoute.path == link.path} />
+        {/each}
+    </div>
+
+    <div class="w-1/2 flex flex-row flex-row-reverse pr-2">
+        <NavItem
+            name="Login"
+            path="/login"
+            active={currentRoute.path == "/login"}
+        />
+    </div>
 </nav>
