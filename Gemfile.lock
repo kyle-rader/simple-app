@@ -82,6 +82,8 @@ GEM
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    inertia_rails (2.0.1)
+      rails (>= 5)
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
@@ -185,11 +187,12 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  inertia_rails (~> 2.0)
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3)
-  tailwindcss-rails
+  tailwindcss-rails (~> 2.0)
   tzinfo-data
   vite_rails (~> 3.0)
   web-console
