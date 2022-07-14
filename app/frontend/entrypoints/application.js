@@ -27,8 +27,6 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
 
-import '../../assets/stylesheets/application.css';
-
 import axios from 'axios'
 
 import { createInertiaApp } from '@inertiajs/inertia-svelte'
