@@ -1,0 +1,11 @@
+/* Application styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+main,
+div#app,
+div#root {
+    min-height: 100vh;
+}

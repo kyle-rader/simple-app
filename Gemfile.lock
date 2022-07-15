@@ -66,6 +66,10 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    after_commit_everywhere (1.2.2)
+      activerecord (>= 4.2)
+      activesupport
+    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.12.0)
       msgpack (~> 1.2)
@@ -157,10 +161,29 @@ GEM
     rake (13.0.6)
     reline (0.3.1)
       io-console (~> 0.5)
+    roda (3.58.0)
+      rack
+    rodauth (2.25.0)
+      roda (>= 2.6.0)
+      sequel (>= 4)
+    rodauth-model (0.2.0)
+      rodauth (~> 2.0)
+    rodauth-rails (1.5.2)
+      bcrypt
+      railties (>= 4.2, < 8)
+      roda (~> 3.55)
+      rodauth (~> 2.25)
+      rodauth-model (~> 0.2)
+      sequel-activerecord_connection (~> 1.1)
+      tilt
+    sequel (5.58.0)
+    sequel-activerecord_connection (1.2.9)
+      activerecord (>= 4.2, < 8)
+      after_commit_everywhere (~> 1.1)
+      sequel (~> 5.38)
     strscan (3.0.3)
-    tailwindcss-rails (2.0.10-x86_64-linux)
-      railties (>= 6.0.0)
     thor (1.2.1)
+    tilt (2.0.10)
     timeout (0.3.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -185,6 +208,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap
   debug
   inertia_rails (~> 2.0)
@@ -192,7 +216,7 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3)
-  tailwindcss-rails (~> 2.0)
+  rodauth-rails (~> 1.5)
   tzinfo-data
   vite_rails (~> 3.0)
   web-console

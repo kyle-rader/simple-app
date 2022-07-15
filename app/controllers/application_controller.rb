@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
     def index
-        render inertia: 'home/index'
+        render template: 'index'
+    end
+
+    def privacy
+        render template: 'privacy'
     end
 end
