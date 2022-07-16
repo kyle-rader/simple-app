@@ -14,9 +14,11 @@
 
   <body class="bg-bgmain text-fgmain flex flex-col">
     <%= render "shared/header" %>
+    
     <div class="flex-grow">
       <%= yield %>
     </div>
+    
     <%= render "shared/footer" %>
   </body>
 </html>

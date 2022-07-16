@@ -1,26 +1,31 @@
+<div class="w-80 mx-auto">
 <%= form_with url: rodauth.login_path, method: :post, data: { turbo: false } do |form| %>
-  <% if rodauth.skip_login_field_on_login? %>
-    <div class="form-group mb-3">
-      <%= form.label "login", rodauth.login_label, class: "form-label" %>
-      <%= form.email_field rodauth.login_param, value: params[rodauth.login_param], id: "login", readonly: true, class: "form-control-plaintext" %>
-    </div>
-  <% else %>
-    <div class="form-group mb-3">
-      <%= form.label "login", rodauth.login_label, class: "form-label" %>
-      <%= form.email_field rodauth.login_param, value: params[rodauth.login_param], id: "login", autocomplete: "email", required: true, class: "form-control #{"is-invalid" if rodauth.field_error(rodauth.login_param)}", aria: ({ invalid: true, describedby: "login_error_message" } if rodauth.field_error(rodauth.login_param)) %>
-      <%= content_tag(:span, rodauth.field_error(rodauth.login_param), class: "invalid-feedback", id: "login_error_message") if rodauth.field_error(rodauth.login_param) %>
-    </div>
-  <% end %>
+  <div class="grid grid-col-1 gap-2">
+    <% if rodauth.skip_login_field_on_login? %>
+      <div class="grid grid-col-1 gap-1">
+        <%= form.label "login", rodauth.login_label, class: "text-left block" %>
+        <%= form.email_field rodauth.login_param, value: params[rodauth.login_param], id: "login", readonly: true, class: "rounded-md py-1 pl-2" %>
+      </div>
+    <% else %>
+      <div class="grid grid-col-1 gap-1">
+        <%= form.label "login", rodauth.login_label, class: "text-left block" %>
+        <%= form.email_field rodauth.login_param, value: params[rodauth.login_param], id: "login", autocomplete: "email", required: true, class: "rounded-md py-1 pl-2 #{"is-invalid" if rodauth.field_error(rodauth.login_param)}", aria: ({ invalid: true, describedby: "login_error_message" } if rodauth.field_error(rodauth.login_param)) %>
+        <%= content_tag(:span, rodauth.field_error(rodauth.login_param), class: "text-red", id: "login_error_message") if rodauth.field_error(rodauth.login_param) %>
+      </div>
+    <% end %>
 
-  <% unless rodauth.skip_password_field_on_login? %>
-    <div class="form-group mb-3">
-      <%= form.label "password", rodauth.password_label, class: "form-label" %>
-      <%= form.password_field rodauth.password_param, value: "", id: "password", autocomplete: rodauth.password_field_autocomplete_value, required: true, class: "form-control #{"is-invalid" if rodauth.field_error(rodauth.password_param)}", aria: ({ invalid: true, describedby: "password_error_message" } if rodauth.field_error(rodauth.password_param)) %>
-      <%= content_tag(:span, rodauth.field_error(rodauth.password_param), class: "invalid-feedback", id: "password_error_message") if rodauth.field_error(rodauth.password_param) %>
-    </div>
-  <% end %>
+    <% unless rodauth.skip_password_field_on_login? %>
+      <div class="grid grid-col-1 gap-1">
+        <%= form.label "password", rodauth.password_label, class: "text-left block" %>
+        <%= form.password_field rodauth.password_param, value: "", id: "password", autocomplete: rodauth.password_field_autocomplete_value, required: true, class: "rounded-md py-1 pl-2 #{"is-invalid" if rodauth.field_error(rodauth.password_param)}", aria: ({ invalid: true, describedby: "password_error_message" } if rodauth.field_error(rodauth.password_param)) %>
+        <%= content_tag(:span, rodauth.field_error(rodauth.password_param), class: "text-red", id: "password_error_message") if rodauth.field_error(rodauth.password_param) %>
+      </div>
+    <% end %>
 
-  <div class="form-group mb-3">
-    <%= form.submit rodauth.login_button, class: "btn btn-primary" %>
+    <div class="w-full mt-2">
+      <%= form.submit rodauth.login_button, class: "border rounded-md bg-green p-1 w-full hover:pointer hover:bg-green-dark hover:ring-green-light" %>
+    </div>
+
   </div>
 <% end %>
+</div>

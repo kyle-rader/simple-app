@@ -14,6 +14,7 @@
 
   <body class="bg-bgmain text-fgmain flex flex-col">
     <%= render "shared/header" %>
+
     <div class="flex-grow">
       <%= yield %>
       <% if notice %>
@@ -23,6 +24,7 @@
         <div class="alert alert-danger"><%= alert %></div>
       <% end %>
     </div>
+    
     <%= render "shared/footer" %>
   </body>
 </html>
