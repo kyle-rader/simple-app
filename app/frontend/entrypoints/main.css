@@ -9,3 +9,13 @@ div#app,
 div#root {
     min-height: 100vh;
 }
+
+@layer components {
+    .btn-primary {
+        @apply rounded-full bg-green-dark hover:cursor-pointer hover:bg-green-light px-2 py-1;
+    }
+
+    .form-field-text {
+        @apply rounded-md py-1 pl-1;
+    }
+}
