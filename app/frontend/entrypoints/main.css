@@ -11,8 +11,16 @@ div#root {
 }
 
 @layer components {
+    .btn {
+        @apply rounded-full px-2 py-1 hover:cursor-pointer;
+    }
+
     .btn-primary {
-        @apply rounded-full bg-green-dark hover:cursor-pointer hover:bg-green-light px-2 py-1;
+        @apply bg-green-dark hover:bg-green-light;
+    }
+
+    .btn-warning {
+        @apply rounded-full bg-orange-dark hover:bg-orange-light;
     }
 
     .form-field-text {

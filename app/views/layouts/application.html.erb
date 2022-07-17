@@ -17,6 +17,15 @@
     
     <div class="flex-grow">
       <%= yield %>
+      
+      <div class="container text-center mt-4">
+        <% if notice %>
+          <div class="alert alert-success"><%= notice %></div>
+        <% end %>
+        <% if alert %>
+          <div class="alert alert-danger"><%= alert %></div>
+        <% end %>
+      </div>
     </div>
     
     <%= render "shared/footer" %>
