@@ -19,8 +19,25 @@ div#root {
         @apply bg-green-dark hover:bg-green-light;
     }
 
+    
     .btn-warning {
-        @apply rounded-full bg-orange-dark hover:bg-orange-light;
+        @apply bg-orange-dark hover:bg-orange-light;
+    }
+
+    .btn-danger {
+        @apply bg-red-dark hover:bg-red-light;
+    }
+
+    .alert-success {
+        @apply text-green-light;
+    }
+
+    .alert-warning {
+        @apply text-orange;
+    }
+
+    .alert-danger {
+        @apply text-red;
     }
 
     .form-field-text {
