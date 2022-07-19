@@ -1,5 +1,5 @@
 <%= form_with url: rodauth.logout_path, method: :post, data: { turbo: false } do |form| %>
-  <div class="container w-80 mx-auto">
+  <div class="container w-80 mx-auto mt-4">
 
     <% if rodauth.features.include?(:active_sessions) %>
       <div class="grid grid-cols-1 gap-2 mb-2">
