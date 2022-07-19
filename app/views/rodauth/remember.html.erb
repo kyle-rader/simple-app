@@ -1,5 +1,6 @@
 <%= form_with url: rodauth.remember_path, method: :post, data: { turbo: false } do |form| %>
-  <fieldset class="form-group mb-3">
+<div class="w-80 mx-auto">
+  <fieldset class="grid grid-cols-1 gap-1">
     <div class="form-check">
       <%= form.radio_button rodauth.remember_param, rodauth.remember_remember_param_value, id: "remember-remember", class: "form-check-input" %>
       <%= form.label "remember-remember", rodauth.remember_remember_label, class: "form-check-label" %>
@@ -16,7 +17,8 @@
     </div>
   </fieldset>
 
-  <div class="form-group mb-3">
+  <div class="grid grid-cols-1 mt-2">
     <%= form.submit rodauth.remember_button, class: "btn btn-primary" %>
   </div>
+</div>
 <% end %>
