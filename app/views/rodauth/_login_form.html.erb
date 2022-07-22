@@ -1,31 +1,31 @@
 <div class="w-80 mx-auto">
-<%= form_with url: rodauth.login_path, method: :post, data: { turbo: false } do |form| %>
-  <div class="grid grid-cols-1 gap-2">
-    <% if rodauth.skip_login_field_on_login? %>
-      <div class="grid grid-cols-1 gap-1">
-        <%= form.label "login", rodauth.login_label, class: "text-left block" %>
-        <%= form.email_field rodauth.login_param, value: params[rodauth.login_param], id: "login", readonly: true, class: "form-field-text" %>
-      </div>
-    <% else %>
-      <div class="grid grid-cols-1 gap-1">
-        <%= form.label "login", rodauth.login_label, class: "text-left block" %>
-        <%= form.email_field rodauth.login_param, value: params[rodauth.login_param], id: "login", autocomplete: "email", required: true, class: "form-field-text #{"is-invalid" if rodauth.field_error(rodauth.login_param)}", aria: ({ invalid: true, describedby: "login_error_message" } if rodauth.field_error(rodauth.login_param)) %>
-        <%= content_tag(:span, rodauth.field_error(rodauth.login_param), class: "text-red", id: "login_error_message") if rodauth.field_error(rodauth.login_param) %>
-      </div>
-    <% end %>
+  <%= form_with url: rodauth.login_path, method: :post, data: { turbo: false } do |form| %>
+    <div class="grid grid-cols-1 gap-2">
+      <% if rodauth.skip_login_field_on_login? %>
+        <div class="grid grid-cols-1 gap-2">
+          <%= form.label "login", rodauth.login_label, class: "text-left block" %>
+          <%= form.email_field rodauth.login_param, placeholder: "email", value: params[rodauth.login_param], id: "login", readonly: true, class: "form-field-text" %>
+        </div>
+      <% else %>
+        <div class="grid grid-cols-1 gap-2">
+          <%= form.label "login", rodauth.login_label, class: "text-left block" %>
+          <%= form.email_field rodauth.login_param, placeholder: "email", value: params[rodauth.login_param], id: "login", autocomplete: "email", required: true, class: "form-field-text #{"is-invalid" if rodauth.field_error(rodauth.login_param)}", aria: ({ invalid: true, describedby: "login_error_message" } if rodauth.field_error(rodauth.login_param)) %>
+          <%= content_tag(:span, rodauth.field_error(rodauth.login_param), class: "text-red", id: "login_error_message") if rodauth.field_error(rodauth.login_param) %>
+        </div>
+      <% end %>
 
-    <% unless rodauth.skip_password_field_on_login? %>
-      <div class="grid grid-cols-1 gap-1">
-        <%= form.label "password", rodauth.password_label, class: "text-left block" %>
-        <%= form.password_field rodauth.password_param, value: "", id: "password", autocomplete: rodauth.password_field_autocomplete_value, required: true, class: "form-field-text #{"is-invalid" if rodauth.field_error(rodauth.password_param)}", aria: ({ invalid: true, describedby: "password_error_message" } if rodauth.field_error(rodauth.password_param)) %>
-        <%= content_tag(:span, rodauth.field_error(rodauth.password_param), class: "text-red", id: "password_error_message") if rodauth.field_error(rodauth.password_param) %>
-      </div>
-    <% end %>
+      <% unless rodauth.skip_password_field_on_login? %>
+        <div class="grid grid-cols-1 gap-2">
+          <%= form.label "password", rodauth.password_label, class: "text-left block" %>
+          <%= form.password_field rodauth.password_param, value: "", id: "password", autocomplete: rodauth.password_field_autocomplete_value, required: true, class: "form-field-text #{"is-invalid" if rodauth.field_error(rodauth.password_param)}", aria: ({ invalid: true, describedby: "password_error_message" } if rodauth.field_error(rodauth.password_param)) %>
+          <%= content_tag(:span, rodauth.field_error(rodauth.password_param), class: "text-red", id: "password_error_message") if rodauth.field_error(rodauth.password_param) %>
+        </div>
+      <% end %>
 
-    <div class="w-full mt-2">
-      <%= form.submit rodauth.login_button, class: "btn btn-primary w-full" %>
+      <div class="w-full mt-2">
+        <%= form.submit rodauth.login_button, class: "btn btn-primary w-full" %>
+      </div>
+
     </div>
-
-  </div>
-<% end %>
+  <% end %>
 </div>

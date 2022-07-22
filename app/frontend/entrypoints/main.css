@@ -12,11 +12,11 @@ div#root {
 
 @layer components {
     .btn {
-        @apply rounded-full px-2 py-1 hover:cursor-pointer;
+        @apply rounded-full px-2 py-1 hover:cursor-pointer hover:font-bold;
     }
 
     .btn-primary {
-        @apply bg-lime-600 hover:font-bold;
+        @apply bg-lime-600;
     }
 
     .btn-warning {
@@ -35,7 +35,7 @@ div#root {
         @apply text-orange;
     }
 
-    .alert-danger {
+    .alert-danger, .invalid-feedback {
         @apply text-red;
     }
 

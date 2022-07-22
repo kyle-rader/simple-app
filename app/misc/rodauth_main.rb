@@ -42,6 +42,9 @@ class RodauthMain < Rodauth::Rails::Auth
     # Redirect to the app from login and registration pages if already logged in.
     # already_logged_in { redirect login_redirect }
 
+    change_login_requires_password? true
+    require_login_confirmation? true
+
     # ==> Emails
     # Use a custom mailer for delivering authentication emails.
     create_reset_password_email do
@@ -85,7 +88,7 @@ class RodauthMain < Rodauth::Rails::Auth
     # login_does_not_meet_requirements_message { "invalid email#{", #{login_requirement_message}" if login_requirement_message}" }
 
     # Change minimum number of password characters required when creating an account.
-    password_minimum_length 8
+    password_minimum_length 12
 
     # ==> Remember Feature
     # Remember all logged in users.

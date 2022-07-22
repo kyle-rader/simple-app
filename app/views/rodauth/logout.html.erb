@@ -1,17 +1,20 @@
-<%= form_with url: rodauth.logout_path, method: :post, data: { turbo: false } do |form| %>
-  <div class="container w-80 mx-auto mt-4">
-
-    <% if rodauth.features.include?(:active_sessions) %>
-      <div class="grid grid-cols-1 gap-2 mb-2">
-        <div class="form-check">
-          <%= form.check_box rodauth.global_logout_param, id: "global-logout", class: "form-check-input" %>
-          <%= form.label "global-logout", rodauth.global_logout_label, class: "form-check-label" %>
+<div class="w-80 mx-auto">
+  <%= form_with url: rodauth.logout_path, method: :post, data: { turbo: false } do |form| %>
+    <div class="grid grid-cols-1 gap-2">
+      <h1 class="text-xl text-center">Logout</h1>
+      
+      <% if rodauth.features.include?(:active_sessions) %>
+        <div class="grid grid-cols-1 gap-2 mb-2">
+          <div class="form-check">
+            <%= form.check_box rodauth.global_logout_param, id: "global-logout", class: "form-check-input" %>
+            <%= form.label "global-logout", rodauth.global_logout_label, class: "form-check-label" %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
 
-    <div class="">
-      <%= form.submit rodauth.logout_button, class: "btn btn-warning w-full" %>
+      <div class="">
+        <%= form.submit rodauth.logout_button, class: "btn btn-warning w-full" %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
