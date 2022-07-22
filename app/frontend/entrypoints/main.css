@@ -19,7 +19,6 @@ div#root {
         @apply bg-green-dark hover:bg-green-light;
     }
 
-    
     .btn-warning {
         @apply bg-orange-dark hover:bg-orange-light;
     }
@@ -41,6 +40,6 @@ div#root {
     }
 
     .form-field-text {
-        @apply rounded-md py-1 pl-1;
+        @apply rounded-md py-2 pl-2 bg-dark0-soft;
     }
 }

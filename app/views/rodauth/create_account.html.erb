@@ -1,5 +1,6 @@
 <%= form_with url: rodauth.create_account_path, method: :post, data: { turbo: false } do |form| %>
 <div class="container w-80 mx-auto grid grid-cols-1 gap-2">
+  <h1 class="text-xl text-center">Sign Up</h1>
   <div class="grid grid-cols-1 gap-1">
     <%= form.label "login", rodauth.login_label, class: "form-label" %>
     <%= form.email_field rodauth.login_param, value: params[rodauth.login_param], id: "login", autocomplete: "email", required: true, class: "form-field-text #{"is-invalid" if rodauth.field_error(rodauth.login_param)}", aria: ({ invalid: true, describedby: "login_error_message" } if rodauth.field_error(rodauth.login_param)) %>
