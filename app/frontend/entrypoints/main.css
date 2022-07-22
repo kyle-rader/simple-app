@@ -16,7 +16,7 @@ div#root {
     }
 
     .btn-primary {
-        @apply bg-green-dark hover:bg-green-light;
+        @apply bg-lime-600 hover:font-bold;
     }
 
     .btn-warning {
@@ -28,7 +28,7 @@ div#root {
     }
 
     .alert-success {
-        @apply text-green-light;
+        @apply text-lime-500;
     }
 
     .alert-warning {
