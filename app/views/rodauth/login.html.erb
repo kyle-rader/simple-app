@@ -1,7 +1,5 @@
 <div class="w-80 mx-auto text-center">
-    <% if rodauth.logged_in? %>
-        <h1 class="text-xl feedback-success">You are already logged in!</h1>
-    <% else %>
+    <%= render layout: 'layouts/unless_logged_in' do %>
         <h1 class="text-xl">Login</h1>
         <%= render "login_form_header" %>
         <%= render "login_form" %>

@@ -1,0 +1,5 @@
+<% if rodauth.logged_in? %>
+    <h1 class="text-xl text-center">You are already logged in!</h1>
+<% else %>
+    <%= yield %>
+<% end %>

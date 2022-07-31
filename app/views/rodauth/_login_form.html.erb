@@ -17,7 +17,7 @@
       <% unless rodauth.skip_password_field_on_login? %>
         <div class="grid grid-cols-1 gap-2">
           <%= form.label "password", rodauth.password_label, class: "text-left block" %>
-          <%= form.password_field rodauth.password_param, value: "", id: "password", autocomplete: rodauth.password_field_autocomplete_value, required: true, class: "form-field-text #{"is-invalid" if rodauth.field_error(rodauth.password_param)}", aria: ({ invalid: true, describedby: "password_error_message" } if rodauth.field_error(rodauth.password_param)) %>
+          <%= form.password_field rodauth.password_param, placeholder: "your password", value: "", id: "password", autocomplete: rodauth.password_field_autocomplete_value, required: true, class: "form-field-text #{"is-invalid" if rodauth.field_error(rodauth.password_param)}", aria: ({ invalid: true, describedby: "password_error_message" } if rodauth.field_error(rodauth.password_param)) %>
           <%= content_tag(:span, rodauth.field_error(rodauth.password_param), class: "text-red", id: "password_error_message") if rodauth.field_error(rodauth.password_param) %>
         </div>
       <% end %>
