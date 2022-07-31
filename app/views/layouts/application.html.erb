@@ -9,7 +9,9 @@
 
     <%= vite_client_tag %>
     <%= vite_stylesheet_tag "main" %>
-    <% # No JS tag here - main pages are all normal Rails ERB templates, server side rendered for better SEO %>
+    <% if @inertia_app %>
+      <%= vite_javascript_tag @inertia_app %>
+    <% end %>
   </head>
 
   <body class="bg-bgmain text-fgmain flex flex-col">
