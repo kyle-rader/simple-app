@@ -11,11 +11,11 @@ div#root {
 
 @layer components {
     .btn {
-        @apply rounded-full px-2 py-1 hover:cursor-pointer hover:font-bold;
+        @apply rounded-lg p-2 hover:cursor-pointer hover:font-bold;
     }
 
     .btn-primary {
-        @apply bg-lime-600;
+        @apply bg-blue;
     }
 
     .btn-warning {
@@ -39,6 +39,6 @@ div#root {
     }
 
     .form-field-text {
-        @apply rounded-md py-2 pl-2 bg-dark0-soft;
+        @apply rounded-md py-2 pl-2 bg-dark0;
     }
 }
