@@ -41,4 +41,8 @@ div#root {
     .form-field-text {
         @apply rounded-md py-2 pl-2 bg-dark0;
     }
+
+    .code {
+        @apply rounded-md bg-dark0 p-2;
+    }
 }
