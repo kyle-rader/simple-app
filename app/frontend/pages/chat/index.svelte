@@ -3,12 +3,27 @@
 
   import { createConsumer } from "@rails/actioncable";
   const consumer = createConsumer();
-
+  let chatChannel;
   let connected = false;
-  let messages = [];
+  $: messages = [
+    {
+      from: "bob",
+      body: "I am bob!",
+    },
+    {
+      from: "alice",
+      body: "I am Alice!",
+    },
+  ];
+
+  const received = (data) => {
+    console.log("received: Got Data!");
+    messages = [...messages, data];
+    console.log(messages);
+  };
 
   const connect = () => {
-    consumer.subscriptions.create(
+    chatChannel = consumer.subscriptions.create(
       { channel: "ChatChannel", user },
       {
         initialized() {
@@ -17,14 +32,12 @@
         },
         connected() {
           console.log("we are connected to chats");
+          chatChannel.send({ from: user, body: "Is this thing on!?!?!" });
         },
         disconnected() {
           console.log("no longer connected to chats");
         },
-        received(data) {
-          console.log("Got Data!");
-          messages.push(data);
-        },
+        received,
       }
     );
   };
@@ -47,9 +60,14 @@
       <button class="btn btn-primary px-4" on:click={connect}>Connect</button>
     {/if}
   </p>
-  <div class="px-6 mx-auto flex flex-cols-1">
+</div>
+<div class="p-4 mx-auto">
+  <div class="flex flex-col">
     {#each messages as msg}
-      <div class="msg">{msg}</div>
+      <div class="p1">From: {msg.from}. {msg.body}</div>
     {/each}
   </div>
 </div>
+
+<style>
+</style>
