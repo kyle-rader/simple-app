@@ -1,6 +1,7 @@
 <div class="w-80 mx-auto">
   <%= form_with url: rodauth.verify_account_path, method: :post, data: { turbo: false } do |form| %>
     <div class="grid grid-cols-1 gap-2">
+      <h1 class="text-xl text-center">Click to verify your account</h1>
       <% if rodauth.verify_account_set_password? %>
         <div class="grid grid-cols-1 gap-2">
           <%= form.label "password", rodauth.password_label, class: "form-label" %>

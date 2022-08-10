@@ -15,4 +15,10 @@ class ApplicationController < ActionController::Base
     def privacy
         render template: 'privacy'
     end
+
+    private
+
+    def authenticate
+        rodauth.require_authentication # redirect to login page if not authenticated
+    end
 end
