@@ -5,16 +5,7 @@
   const consumer = createConsumer();
   let chatChannel;
   let connected = false;
-  $: messages = [
-    {
-      from: "bob",
-      body: "I am bob!",
-    },
-    {
-      from: "alice",
-      body: "I am Alice!",
-    },
-  ];
+  $: messages = [];
 
   const received = (data) => {
     console.log("received: Got Data!");
@@ -22,7 +13,15 @@
     console.log(messages);
   };
 
+  const cleanup = () => {
+    if (chatChannel != null && consumer != null) {
+      consumer.subscriptions.remove(chatChannel);
+      chatChannel = null;
+    }
+  };
+
   const connect = () => {
+    cleanup();
     chatChannel = consumer.subscriptions.create(
       { channel: "ChatChannel", user },
       {
@@ -43,7 +42,7 @@
   };
 
   const disconnect = () => {
-    consumer.disconnect();
+    cleanup();
     connected = false;
   };
 </script>
