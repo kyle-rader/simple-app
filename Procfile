@@ -1,0 +1,1 @@
+web: npm build & bundle exec serve
