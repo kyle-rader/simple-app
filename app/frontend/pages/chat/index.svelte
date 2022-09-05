@@ -10,9 +10,7 @@
   $: messages = [];
 
   const received = (data) => {
-    console.log("received: Got Data!");
     messages = [...messages, data];
-    console.log(messages);
   };
 
   const cleanup = () => {
@@ -31,15 +29,13 @@
     chatChannel = consumer.subscriptions.create(
       { channel: "ChatChannel", user },
       {
-        initialized() {
-          connected = true;
-          console.log("Chat Subscription created");
-        },
+        initialized() {},
         connected() {
-          console.log("Connected to chat!");
+          connected = true;
+          console.log("Connected.");
         },
         disconnected() {
-          console.log("Disconnected from chat!");
+          console.log("Disconnected.!");
           cleanup();
         },
         received,
