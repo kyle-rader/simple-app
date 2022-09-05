@@ -4,7 +4,7 @@
   import TextBox from "./TextBox.svelte";
 
   import { createConsumer } from "@rails/actioncable";
-  const consumer = createConsumer();
+  let consumer;
   let chatChannel;
   let connected = false;
   $: messages = [];
@@ -20,24 +20,27 @@
       consumer.subscriptions.remove(chatChannel);
       chatChannel = null;
     }
+    consumer = null;
     connected = false;
     messages = [];
   };
 
   const connect = () => {
     cleanup();
+    consumer = createConsumer();
     chatChannel = consumer.subscriptions.create(
       { channel: "ChatChannel", user },
       {
         initialized() {
           connected = true;
-          console.log("subscription created");
+          console.log("Chat Subscription created");
         },
         connected() {
-          console.log("we are connected to chats");
+          console.log("Connected to chat!");
         },
         disconnected() {
-          console.log("no longer connected to chats");
+          console.log("Disconnected from chat!");
+          cleanup();
         },
         received,
       }
@@ -57,9 +60,7 @@
       <button class="btn btn-primary px-4" on:click={disconnect}
         >Disconnect</button
       >
-      <TextBox
-        on:send={(e) => chatChannel.send({ from: user, body: e.detail.text })}
-      />
+      <TextBox on:send={(e) => chatChannel.send({ body: e.detail.text })} />
     {:else}
       <button class="btn btn-primary px-4" on:click={connect}>Connect</button>
     {/if}
