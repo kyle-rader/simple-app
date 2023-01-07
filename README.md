@@ -2,7 +2,7 @@
 
 > *For some definition of simple*
 
-This repo provides a modern web application template that uses [Rails] for you classic MVC server-client relationship and [SvelteJS] for interactive JS components.
+This repo provides a modern web application template that uses [Rails] for your classic MVC server-client relationship and [SvelteJS] for interactive JS components.
 
 ## Dev Setup
 Either Linux, WSL (Windows Subsystem for Linux), or Mac will work best.
